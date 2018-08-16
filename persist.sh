@@ -5,7 +5,7 @@
 #functions
 rebootprompt () {
 echo -n "Your system needs to be rebooted for persistence to be enabled. Reboot now? (y/n): "
-read $rebootinput
+read rebootinput
 if [ $rebootinput = y ] || [ $rebootinput = Y ]
 then
 	echo
@@ -27,7 +27,7 @@ fi
 fdisk -l
 echo
 echo -n "Enter the mount point of the USB: "
-read $usbpath
+read usbpath
 echo
 mkdir -p /mnt/my_usb
 mount $usbpath /mnt/my_usb
@@ -35,7 +35,7 @@ echo "/ union" > /mnt/my_usb/persistence.conf
 umount /dev/sdc2
 echo
 echo -n "Your system needs to be rebooted for persistence to be enabled. Reboot now? (y/n): "
-read $rebootinput
+read rebootinput
 if [ $rebootinput = y ] || [ $rebootinput = Y ]
 then
 	echo
